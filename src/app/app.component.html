@@ -1,59 +1,8 @@
+<app-navbar></app-navbar>
 <div class="container">
   <div class="row">
-    <p>&nbsp;</p>
-    <div class="col-md-6 my-3">
-      <app-form-new-item (newCityEvent)="addNewCity($event)" [label]="'City'" [className]="'btn-success'"></app-form-new-item>
-    </div>
-    <div class="col-md-6 my-3">
-      <input type="text" class="form-control" placeholder="Filter..." [(ngModel)]="criteria">
-    </div>
-    <div class="col-md-8">
-      
-      <!-- <app-button></app-button>
-      <p>{{ title }} con Angular</p>
-      <p>El resultado de la multiplicación 5 x 5 es = {{ 5 * 5 }}</p>
-      <img src="{{url}}" alt="África"> -->
-
-      <!-- <p>
-        El nombre es: {{ name }}
-      </p>
-      <input type="text" [(ngModel)]="name"><br><br>
-
-      <p *ngIf="name2">
-        La categoría es: {{ name2 }}
-      </p>
-      <input type="text" [(ngModel)]="name2"> -->
-
-      <!-- <ul>
-        <li [ngStyle]="{'color': '#ee99d8', 'background-color': city === 'Yucatán' ? 'blue' : 'green'}">{{city}}</li>
-        <li [ngClass]="{'selected': city === 'Yucatán', 'blue': city !== 'Yucatán'}">{{city}}</li> ***** 
-      </ul> -->
-
-      <ul>
-        <app-cities *ngFor="let city of (cities | filter:criteria)"
-                    (cityClickedEvent)="onCityClicked($event)"
-                    [city]="city"
-                    [selection]="selection">
-        </app-cities>
-      </ul>
-
-    </div>
-    <!-- <input type="text" (keypress)="onSearch()"> -->
-    <p>{{ '6/15/23, 9:03 AM' | date: 'full' }}</p>
-    <p>My Birthday is: {{ '11/19/72, 5:07 AM' | date: 'full' | uppercase }}</p>
-    <p>{{ '999' | currency }}</p>
-    <p>{{ '999' | currency: 'EUR' }}</p>
-    <p>{{ '999' | currency: 'MXN' }}</p>
-    <p>{{ '999' | currency: 'DOP' }}</p>
-    <div class="col-md-4">
-      <p>&nbsp;</p>
-      <div *ngIf="selection">
-        <p>Your city is: {{ selection }}</p>
-        <!-- <button (click)="onClear()">Clear your selection</button> -->
-        <app-button (click)="onClear()" [color]="'blue'" [label]="'Clear your selection'"></app-button>
-        <!-- <app-button (click)="onClear()" [color]="'blue'" [label]="'Clear your selection'" [selection]="selection">
-        </app-button> -->
-      </div>
+    <div class="col-12">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

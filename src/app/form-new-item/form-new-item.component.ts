@@ -14,13 +14,7 @@ export class FormNewItemComponent {
   @Output() newCityEvent = new EventEmitter<string>();
 
   onAddNewItem(item: string): void {
-    console.log('Item ->', item);
     this.newCityEvent.emit(item);
   }
-
-  // // counterRender(): boolean {
-  // //   console.log('Render Form');
-  // //   return true;
-  // // }
 
 }

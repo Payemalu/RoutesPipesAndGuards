@@ -9,7 +9,6 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
       {{ city | titlecase }}
     </li>
   </ul>
-  <!-- <p>Counter: {{ counterRender() }}</p> -->
   `,
   styleUrls: ['./cities.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -24,10 +23,5 @@ export class CitiesComponent {
   onCityClicked(city: string): void {
     this.cityClickedEvent.emit(city);
   }
-
-  // // counterRender(): boolean {
-  // //   console.log('Render Cities');
-  // //   return true;
-  // // }
 
 }
