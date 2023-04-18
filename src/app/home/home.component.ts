@@ -7,13 +7,13 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  cities = ['Campeche', 'Chihuhua', 'Durango', 'Hidalgo', 'Yucatán']
-  name = 'Dominico';
+  cities = ['Campeche', 'Chihuahua', 'Durango', 'Hidalgo', 'Yucatan']
+  name = 'Mex-code';
   name2!: string;
   selection!: string;
   criteria = '';
   
-  title = 'reto01, Día 14';
+  title = 'Reto 01, Día 14';
   url = 'https://img.freepik.com/fotos-premium/fantastica-vista-cascada-kirkjufellsfoss-cerca-montana-kirkjufell-al-atardecer_761071-868.jpg';
 
   addNewCity(city: string): void {

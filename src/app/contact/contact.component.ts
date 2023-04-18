@@ -32,8 +32,7 @@ export class ContactComponent implements OnInit {
     })
   }
 
-  // onSubmit(values: any): void { When receive values
-  onSubmit(form: NgForm): void { // When it receives a complete form
+  onSubmit(form: NgForm): void {
     console.log('Form values: ', form);
   }
 

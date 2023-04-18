@@ -39,10 +39,6 @@ import { ListComponent } from './users/list/list.component';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  // exports: [
-  //   FormNewItemComponent,
-  //   CitiesComponent
-  // ],
   providers: [],
   bootstrap: [AppComponent]
 })

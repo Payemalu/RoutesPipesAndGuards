@@ -11,7 +11,7 @@ export class ContactReactiveComponent implements OnInit {
 
   contactForm!: FormGroup;
   name!: string;
-  // myField = new FormControl();
+  
   constructor(
     private readonly fb: FormBuilder,
     private readonly route: ActivatedRoute
@@ -21,19 +21,15 @@ export class ContactReactiveComponent implements OnInit {
     this.route.queryParams.subscribe((params: Params) => {
       this.name = params['name'];
     })
-    // this.myField.valueChanges;
     this.contactForm = this.initForm();
     this.onPathValue();
-    // this.onSetValue();
   }
 
   onPathValue(): void {
     this.contactForm.patchValue({ name: 'Juan Carlos' });
   }
 
-  onSetValue(): void {
-    // this.contactForm.setValue({ comment: 'Hola Mundo!' });
-  }
+  onSetValue(): void {}
 
   onSubmit(): void {
     console.log('Form ->: ', this.contactForm.value);
