@@ -11,6 +11,7 @@ export class ContactReactiveComponent implements OnInit {
 
   contactForm!: FormGroup;
   name!: string;
+  departments: string[] = [];
   
   constructor(
     private readonly fb: FormBuilder,
@@ -18,6 +19,7 @@ export class ContactReactiveComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.departments = this.route.snapshot.data['departments'];
     this.route.queryParams.subscribe((params: Params) => {
       this.name = params['name'];
     })
