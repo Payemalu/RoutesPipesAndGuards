@@ -1,12 +1,19 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { City } from '../services/data.service';
 
 @Component({
   selector: 'app-cities',
   template: `
-  <ul>
-    <li (click)="onCityClicked(city)"
-        [ngClass]="{'alert alert-info': city === selection}">
-      {{ city | titlecase }}
+  <ul class="list-group">
+    <li class="list-group-item mt-1" (click)="onCitySelected(city)"
+        [ngClass]="{'active': city?._id === selection?._id}">
+      {{ city?.name | titlecase }}
+      <button *ngIf="city?._id === selection?._id"
+              type="button"
+              class="btn btn-danger float-end"
+              (click)="onCityDelete(city._id)">
+              Delete
+      </button>
     </li>
   </ul>
   `,
@@ -15,13 +22,18 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 })
 export class CitiesComponent {
 
-  @Input() city!: string;
-  @Input() selection!: string;
+  @Input() city!: City;
+  @Input() selection!: City;
 
-  @Output() cityClickedEvent = new EventEmitter<string>();
+  @Output() citySelectedEvent = new EventEmitter<City>();
+  @Output() cityDeleteEvent = new EventEmitter<string>();
 
-  onCityClicked(city: string): void {
-    this.cityClickedEvent.emit(city);
+  onCitySelected(city: City): void {
+    this.citySelectedEvent.emit(city);
+  }
+
+  onCityDelete(id: string): void {
+    this.cityDeleteEvent.emit(id);
   }
 
 }

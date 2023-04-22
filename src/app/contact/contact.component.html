@@ -1,5 +1,6 @@
 <h1>Contact Form - User ID: {{ id }}</h1>
-<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+<!-- <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm"> -->
+<form (ngSubmit)="onSubmit()" #contacKtForm="ngForm">
     <div class="mb-4">
         <label for="name" class="form-label">Name</label>
         <input type="text" class="form-control" id="name" placeholder="Name" name="name" [(ngModel)]="model.name" required #name="ngModel">
